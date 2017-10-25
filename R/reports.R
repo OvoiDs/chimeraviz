@@ -67,7 +67,6 @@ createFusionReport2 <- function(fusions, outputFilename, ibam, edbFile, quiet = 
   rmarkdown::render(
     fusionReportRmd,
     output_file = outputFilename,
-    params = list(fusions = fusions, bam = ibam, edbFile = edbFile),
-    quiet = quiet)
+    params = list(fusions = fusions, bam = ibam, edbFile = edbFile))
 }
 

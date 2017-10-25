@@ -21,10 +21,13 @@ DT::datatable(dfFusions, filter = 'top')
 ```
 ```{r, echo = FALSE}
 edb <- ensembldb::EnsDb(params$edbFile)
+bamFile <- params$bam
+library(Rsamtools)
+indexBam(bamFile)
 for (fusion in reportFusions) {
     plotFusion(
     fusion = fusion,
-    bamfile = params$bam,
+    bamfile = bamFile,
     edb = edb,
     nonUCSC = TRUE)
 }

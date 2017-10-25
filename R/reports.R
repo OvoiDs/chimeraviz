@@ -62,14 +62,12 @@ createFusionReport2 <- function(fusions, outputFilename, ibam, edbFile, quiet = 
     "reports",
     "fusionListReport2.Rmd",
     package="chimeraviz")
-
-  bam <- system.file(ibam)
   
   # Render the report
   rmarkdown::render(
     fusionReportRmd,
     output_file = outputFilename,
-    params = list(fusions = fusions, bam = bam, edbFile = edbFile),
+    params = list(fusions = fusions, bam = ibam, edbFile = edbFile),
     quiet = quiet)
 }
 
